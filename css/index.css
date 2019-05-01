@@ -1,1 +1,282 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v17/TK3iWkUHHAIjg752GT8D.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf) format('truetype');
+}
+.margins {
+  margin: 0.125rem 2rem 0.125rem 3.5rem;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+body {
+  color: #b6b6da;
+  font: normal normal normal 1em/1.125em 'source sans pro', helvetica, arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+  font-family: oswald, helvetica, arial, sans-serif;
+}
+h1 {
+  margin: 1.25rem 0;
+  font-size: 1.5rem;
+  line-height: 1.25rem;
+}
+h2 {
+  margin: 1.5rem 0;
+  font-size: 2rem;
+  line-height: 1.125rem;
+}
+a {
+  letter-spacing: 0.035em;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+}
+.container {
+  min-width: 55.625rem;
+}
+.container header {
+  width: 100%;
+  height: 3.125rem;
+  background: #3c3c5f;
+}
+.container header nav,
+.container header ul {
+  display: flex;
+  align-items: center;
+}
+.container header nav {
+  max-width: 62.5rem;
+  height: 3.125rem;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.container header nav img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.container header a {
+  color: #399cd1;
+}
+.container header a:hover {
+  color: #026faa;
+}
+.container header ul {
+  text-align: left;
+}
+.container header ul li {
+  padding: 0 1.125em;
+}
+.container header ul a {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+.container section {
+  width: 100vw;
+  min-height: calc(100vh - 3.125rem);
+  padding-bottom: 3.125rem;
+  background: #003;
+}
+.container section a {
+  color: #026faa;
+}
+.container section a:hover {
+  color: #399cd1;
+}
+.container section .content {
+  max-width: 62.5rem;
+  margin: 0 auto;
+  display: flex;
+}
+.container section .vcard {
+  margin-top: 5em;
+  padding-right: 4rem;
+}
+.container section .vcard h1 {
+  margin-bottom: 0.625rem;
+}
+.container section .vcard p {
+  margin-bottom: 0.375em;
+}
+.container section main {
+  min-width: 40.313rem;
+}
+.container section main p,
+.container section main ul {
+  margin: 0.125rem 2rem 0.125rem 3.5rem;
+}
+.container section h2:nth-child(n+2) {
+  margin-top: 3.125rem;
+}
+.container section ul {
+  margin-left: 2.25rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container section ul li {
+  margin: 0 1.25rem 1.25rem;
+}
+.container section dl {
+  margin: 0.125rem 2rem 0.125rem 3.5rem;
+}
+.container section dl dt {
+  font: bold 1.25rem/1.5rem oswald, helvetica, arial, sans-serif;
+  display: flex;
+  align-items: baseline;
+}
+.container section dl dt h4 {
+  margin-left: 0.625rem;
+  font: italic 1.125rem/1em 'source sans pro', helvetica, arial, sans-serif;
+}
+.container section dl dd {
+  margin: 0.375em 0 2em 1.25rem;
+}
+.container footer {
+  padding: 1rem 1rem 1.5rem;
+  background: #3c3c5f;
+}
+.container footer .copyright {
+  font-size: 0.875rem;
+  text-align: center;
+}
