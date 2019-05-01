@@ -15,7 +15,7 @@
   src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v12/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf) format('truetype');
 }
 .margins {
-  margin: 0.125rem 2rem 0.125rem 3.5rem;
+  margin: 0.125rem 2rem 0.125rem 2.5rem;
 }
 html,
 body,
@@ -176,15 +176,32 @@ a {
 .container {
   min-width: 55.625rem;
 }
+@media screen and (max-width: 63.938em) {
+  .container {
+    min-width: 0;
+  }
+}
 .container header {
   width: 100%;
   height: 3.125rem;
   background: #3c3c5f;
 }
+@media screen and (max-width: 63.938em) {
+  .container header {
+    height: auto;
+  }
+}
 .container header nav,
 .container header ul {
   display: flex;
   align-items: center;
+}
+@media screen and (max-width: 63.938em) {
+  .container header nav,
+  .container header ul {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }
 .container header nav {
   max-width: 62.5rem;
@@ -192,9 +209,19 @@ a {
   margin: 0 auto;
   justify-content: space-between;
 }
+@media screen and (max-width: 63.938em) {
+  .container header nav {
+    height: auto;
+  }
+}
 .container header nav img {
   width: 2.5rem;
   height: 2.5rem;
+}
+@media screen and (max-width: 63.938em) {
+  .container header nav img {
+    display: none;
+  }
 }
 .container header a {
   color: #399cd1;
@@ -208,6 +235,14 @@ a {
 .container header ul li {
   padding: 0 1.125em;
 }
+@media screen and (max-width: 63.938em) {
+  .container header ul li {
+    padding-bottom: 0.625em;
+  }
+  .container header ul li:first-child {
+    padding-top: 0.625rem;
+  }
+}
 .container header ul a {
   font-size: 1.125rem;
   line-height: 1.5rem;
@@ -217,6 +252,11 @@ a {
   min-height: calc(100vh - 3.125rem);
   padding-bottom: 3.125rem;
   background: #003;
+}
+@media screen and (max-width: 63.938em) {
+  .container section {
+    width: 100%;
+  }
 }
 .container section a {
   color: #026faa;
@@ -229,28 +269,65 @@ a {
   margin: 0 auto;
   display: flex;
 }
+@media screen and (max-width: 63.938em) {
+  .container section .content {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 .container section .vcard {
   margin-top: 5em;
   padding-right: 4rem;
 }
+@media screen and (max-width: 63.938em) {
+  .container section .vcard {
+    margin-top: 0;
+    padding-right: 0;
+    padding-bottom: 1.25rem;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    border-bottom: 1px solid #b6b6da;
+  }
+}
 .container section .vcard h1 {
   margin-bottom: 0.625rem;
+}
+@media screen and (max-width: 63.938em) {
+  .container section .vcard h1 {
+    width: 100%;
+  }
 }
 .container section .vcard p {
   margin-bottom: 0.375em;
 }
+@media screen and (max-width: 63.938em) {
+  .container section .vcard p {
+    margin-bottom: 0;
+    padding: 0 0.625rem;
+  }
+}
 .container section main {
   min-width: 40.313rem;
 }
+@media screen and (max-width: 63.938em) {
+  .container section main {
+    min-width: 0;
+    padding: 0 1.25rem;
+    width: 100%;
+  }
+}
 .container section main p,
 .container section main ul {
-  margin: 0.125rem 2rem 0.125rem 3.5rem;
+  margin: 0.125rem 2rem 0.125rem 2.5rem;
 }
 .container section h2:nth-child(n+2) {
   margin-top: 3.125rem;
 }
 .container section ul {
-  margin-left: 2.25rem;
+  margin-left: 1.25rem !important;
   display: flex;
   flex-wrap: wrap;
 }
@@ -258,7 +335,7 @@ a {
   margin: 0 1.25rem 1.25rem;
 }
 .container section dl {
-  margin: 0.125rem 2rem 0.125rem 3.5rem;
+  margin: 0.125rem 2rem 0.125rem 2.5rem;
 }
 .container section dl dt {
   font: bold 1.25rem/1.5rem oswald, helvetica, arial, sans-serif;
