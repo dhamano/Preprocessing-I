@@ -17,6 +17,9 @@
 .margins {
   margin: 0.125rem 2rem 0.125rem 2.5rem;
 }
+.margins-center {
+  margin: 0 auto;
+}
 html,
 body,
 div,
@@ -323,28 +326,56 @@ a {
 .container section main ul {
   margin: 0.125rem 2rem 0.125rem 2.5rem;
 }
-.container section h2:nth-child(n+2) {
-  margin-top: 3.125rem;
+@media screen and (max-width: 63.938em) {
+  .container section main p,
+  .container section main ul {
+    margin-right: 0;
+    margin-left: 1.25rem;
+  }
 }
-.container section ul {
-  margin-left: 1.25rem !important;
+.container section main ul {
+  margin-left: 1.25rem;
   display: flex;
   flex-wrap: wrap;
 }
-.container section ul li {
+@media screen and (max-width: 63.938em) {
+  .container section main ul {
+    margin-left: 0;
+  }
+}
+.container section main ul li {
   margin: 0 1.25rem 1.25rem;
+}
+.container section h2:nth-child(n+2) {
+  margin-top: 3.125rem;
 }
 .container section dl {
   margin: 0.125rem 2rem 0.125rem 2.5rem;
+}
+@media screen and (max-width: 63.938em) {
+  .container section dl {
+    margin-left: 1.25rem;
+  }
 }
 .container section dl dt {
   font: bold 1.25rem/1.5rem oswald, helvetica, arial, sans-serif;
   display: flex;
   align-items: baseline;
 }
+@media screen and (max-width: 63.938em) {
+  .container section dl dt {
+    flex-direction: column;
+  }
+}
 .container section dl dt h4 {
   margin-left: 0.625rem;
   font: italic 1.125rem/1em 'source sans pro', helvetica, arial, sans-serif;
+}
+@media screen and (max-width: 63.938em) {
+  .container section dl dt h4 {
+    margin-top: 0.625rem;
+    margin-left: 0;
+  }
 }
 .container section dl dd {
   margin: 0.375em 0 2em 1.25rem;
