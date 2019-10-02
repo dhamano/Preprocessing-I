@@ -4,56 +4,248 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
+@import "reset";
+@import url('https://fonts.googleapis.com/css?family=Oswald|Source+Sans+Pro');
+@import "mixins";
+@import "vars";
+
 body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+	color: #colors[text];
+	font: normal normal normal 1em/1.125em @font-primary-stack;
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+h1, h2, h3, h4, h5, a {
+	font-family: @font-secondary-stack;
 }
 
-html, body {
-    height: 100%;
+h1 {
+	margin: 1.25rem 0;
+	font-size: 1.5rem;
+	line-height: 1.25rem;
 }
 
+h2 {
+	margin: 1.5rem 0;
+	font-size: 2rem;
+	line-height: 1.125rem;
+}
+
+a {
+	letter-spacing: 0.035em;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+.container {
+	min-width: 55.625rem;
+
+	@media screen and (max-width: 63.938em) {
+		min-width: 0;
+	}
+
+	header {
+		width: 100%;
+		height: 3.125rem;
+		background: #colors[secondary];
+
+		@media screen and (max-width: 63.938em) {
+			height: auto;
+		}
+	
+		nav, ul {
+			display: flex;
+			align-items: center;
+
+			@media screen and (max-width: 63.938em) {
+				flex-wrap: wrap;
+				flex-direction: column;
+			}
+		}
+	
+		nav {
+			max-width: 62.5rem;
+			height: 3.125rem;
+			.margins-center();
+			justify-content: space-between;
+
+			@media screen and (max-width: 63.938em) {
+				height: auto;
+			}
+	
+			img {
+				width: 2.5rem;
+				height: 2.5rem;
+
+				@media screen and (max-width: 63.938em) { display: none; }
+			}
+		}
+	
+		a {
+			color: #colors[link-secondary];
+
+			&:hover {
+				color: #colors[link-primary];
+			}
+		}
+	
+		ul {
+			text-align: left;
+	
+			li {
+				padding: 0 1.125em;
+
+				@media screen and (max-width: 63.938em) {
+					padding-bottom: 0.625em;
+
+					&:first-child { padding-top: 0.625rem; }
+				}
+			}
+	
+			a {
+				font-size: 1.125rem;
+				line-height: 1.5rem;
+			}
+		}
+	}
+	
+	section {
+		width: 100vw;
+		min-height: calc(100vh - 3.125rem);
+		padding-bottom: 3.125rem;
+		background: #colors[primary];
+
+		@media screen and (max-width: 63.938em) {
+			width: 100%;
+		}
+	
+		a {
+			color: #colors[link-primary];
+
+			&:hover {
+				color: #colors[link-secondary];
+			}
+		}
+		
+		.content {
+			max-width: 62.5rem;
+			.margins-center();
+			display: flex;
+
+			@media screen and (max-width: 63.938em) {
+				flex-direction: column;
+				justify-content: center;
+			}
+		}
+	
+		.vcard {
+			margin-top: 5em;
+			padding-right: 4rem;
+
+			@media screen and (max-width: 63.938em) {
+				margin-top: 0;
+				padding-right: 0;
+				padding-bottom: 1.25rem;
+				text-align: center;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: baseline;
+				justify-content: center;
+				border-bottom: 1px solid #colors[text];
+			}
+
+			h1 {
+				margin-bottom: 0.625rem;
+
+				@media screen and (max-width: 63.938em) {
+					width: 100%;
+				}
+			}
+			p {
+				margin-bottom: 0.375em;
+
+				@media screen and (max-width: 63.938em) {
+					margin-bottom: 0;
+					padding: 0 0.625rem;
+				}
+			}
+		}
+	
+		main {
+			min-width: 40.313rem;
+
+			@media screen and (max-width: 63.938em) {
+				min-width: 0;
+				padding: 0 1.25rem;
+				width: 100%;
+			}
+
+			p, ul {
+				.margins();
+
+				@media screen and (max-width: 63.938em) {
+					margin-right: 0;
+					margin-left: 1.25rem;
+				}
+			}
+
+			ul {
+				margin-left: 1.25rem;
+				display: flex;
+				flex-wrap: wrap;
+	
+				@media screen and (max-width: 63.938em) {
+					margin-left: 0;
+				}
+	
+				li {
+					margin: 0 1.25rem 1.25rem;
+				}
+			}
+		}
+
+		h2:nth-child(n+2) { margin-top: 3.125rem; }
+
+		dl {
+			.margins();
+
+			@media screen and (max-width: 63.938em) {
+				margin-left: 1.25rem;
+			}
+
+			dt {
+				font: bold 1.25rem/1.5rem @font-secondary-stack;
+				display: flex;
+				align-items: baseline;
+
+				@media screen and (max-width: 63.938em) {
+					flex-direction: column;
+				}
+
+				h4 {
+					margin-left: 0.625rem;
+					font: italic 1.125rem/1em @font-primary-stack;
+
+					@media screen and (max-width: 63.938em) {
+						margin-top: 0.625rem;
+						margin-left: 0;
+					}
+				}
+			}
+
+			dd {
+				margin: 0.375em 0 2em 1.25rem;
+			}
+		}
+	}
+
+	footer {
+		padding: 1rem 1rem 1.5rem;
+		background: #colors[secondary];
+
+		.copyright {
+			font-size: 0.875rem;
+			text-align: center;
+		}
+	}
+}
